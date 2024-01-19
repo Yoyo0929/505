@@ -18,7 +18,7 @@
     }
 
     .login-container {
-        background-color: #fff;
+      background-color: #fff;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,8 +27,17 @@
 
 .button-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap ;
     display: none;
+    padding: 20px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .myDropdown{
   width: 200px;
@@ -38,7 +47,9 @@
   margin-bottom: 10px;
 }
 .button-container button  {
-  margin: 5px;
+  margin: 20px;
+  justify-content: center;
+  
 }
 .hidden {
   display: none;
@@ -110,14 +121,33 @@ input {
   <div id="hiddenDiv" class="button-container">
 
     <label for="myDropdown">Type massage:</label>
-    <input  id="msg" name="msgtxt" >
-  <button type="submit" class="btn2" id="Send"> Send</button>
-     <dvi>
-        <button type="button" class="btn2" id="Camerabtn">Call</button>
+    <textarea id="msg" name="msgtxt" rows="4" cols="50"></textarea>
+    
+  
+     <dvi >
+       <button type="submit" class="btn2" id="Send"> Send</button>
+        <button type="button" class="btn2" id="Camerabtn" onclick="Viedochatload()">Call</button>
      </dvi>
+    
+    
  
   </div>
-  
+  <script src="https://resource.zegocloud.com/prebuilt/crypto-js.js"></script>
+  <script src="https://resource.zegocloud.com/prebuilt/prebuiltToken.js"></script>
+  <script src="https://zegocloud.github.io/zegocloud_prebuilt_webrtc/ZegoPrebuilt/index.umd.js"></script>
+
+  <script>
+function Viedochatload() {
+    const TOKEN = generatePrebuiltToken(1673569137,"443eb814ba0019468b1aaecaa661d987",'room2','UserID-' + Math.random(),'jack'+ Math.random());
+    
+    const zp = ZegoUIKitPrebuilt.create(TOKEN);
+    zp.joinRoom({
+        container : document.querySelector("#root"),
+    });
+  }
+</script>
+
+
   
   <div id="myDiv">
 </div>
@@ -143,9 +173,17 @@ input {
     function showHiddenDiv() {
       document.getElementById('login').style.display = 'block';
       document.getElementById('hiddenDiv').style.display = 'block';
-      
-      
       document.getElementById('myDiv').style.display = 'block';
+
+      document.getElementById("password").value = '';
+      var myDiv = document.getElementById("login");
+
+            // Set the display property to "none"
+            myDiv.style.display = "none";
+
+
+
+      
     }
 </script>
 <script type="module">
@@ -179,7 +217,7 @@ input {
                 
 
               });
-                alert("send Sucessfull  !");
+                //alert("send Sucessfull  !");
                 document.getElementById("msg").value = '';
 
 })
@@ -187,5 +225,4 @@ input {
 </body>
 </html>
  
-
 
