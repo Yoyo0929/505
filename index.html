@@ -103,10 +103,16 @@ input {
       justify-content: center;
       height: 200px;
     }
+.Lable{
+    color: #e60909;
+    text-align:left;
+
+    }
  
   </style>
 </head>
 <body>
+  
   <div id="login"class="login-container">
     <h2>Login</h2>
     <form id="loginForm" onsubmit="validateForm(event)">
@@ -121,14 +127,17 @@ input {
   <div id="hiddenDiv" class="button-container">
 
     <label for="myDropdown">Type massage:</label>
-    <textarea id="msg" name="msgtxt" rows="4" cols="50"></textarea>
+    <textarea id="msgtxt" name="msgtxt" rows="4" cols="50">MATA OYAWA DENENWA MENIKEE OYAGEN EKA MSG EKA AWATH AETI MATA ,OYA WENUWEN MATA BALAN INNAPULUWAN MENIKE,MANDANWA OYA GODAK MAHANSIWENWA KIYALA.UDE 10:00 TA KALIN CALL KARAN
+    </textarea>
     
   
      <dvi >
        <button type="submit" class="btn2" id="Send"> Send</button>
         <button type="button" class="btn2" id="Camerabtn" onclick="Viedochatload()">Call</button>
      </dvi>
-    
+   <dvi>
+    <label id="showmsg" class="Lable" for="msg">Message:</label>
+   </dvi>
     
  
   </div>
@@ -138,9 +147,8 @@ input {
 
   <script>
 function Viedochatload() {
-   
-     const TOKEN = generatePrebuiltToken(249850569,"f6fabd74ded44a0ca5ff5ec1306695f1",'room2','UserID-' + Math.random(),'jack'+ Math.random());
-       
+    const TOKEN = generatePrebuiltToken(1673569137,"443eb814ba0019468b1aaecaa661d987",'room2','UserID-' + Math.random(),'jack'+ Math.random());
+    
     const zp = ZegoUIKitPrebuilt.create(TOKEN);
     zp.joinRoom({
         container : document.querySelector("#root"),
@@ -187,6 +195,8 @@ function Viedochatload() {
       
     }
 </script>
+
+
 <script type="module">
              // Import the functions you need from the SDKs you need
           import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -223,6 +233,7 @@ function Viedochatload() {
 
 })
 </script>
+
 </body>
 </html>
  
