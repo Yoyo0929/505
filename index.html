@@ -127,8 +127,7 @@ input {
   <div id="hiddenDiv" class="button-container">
 
     <label for="myDropdown">Type massage:</label>
-    <textarea id="msgtxt" name="msgtxt" rows="4" cols="50">MAGE PANATH ARAN OYA GEEWATH WENA ONA MAGE MANIKA.HEMDAMA WAGE MA  EKAMA WAGE ADAREI OYATA MAN KOHE HITIYATH OYATA MAWA ONA KIYALA HITUNA WELAWATA MAN OYA LAGA IDIEDAWAGEMA HETAH
-    </textarea>
+    <textarea id="msgtxt" name="msgtxt" rows="4" cols="50"></textarea>
     
   
      <dvi >
@@ -224,12 +223,12 @@ function Viedochatload() {
               set(ref(db,  'SMS/' + new Date),
               {
    
-                txt: document.getElementById("msg").value,
+                txt: document.getElementById("msgtxt").value,
                 
 
               });
                 //alert("send Sucessfull  !");
-                document.getElementById("msg").value = '';
+                document.getElementById("msgtxt").value = '';
 
 })
 </script>
