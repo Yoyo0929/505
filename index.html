@@ -223,7 +223,7 @@ function Viedochatload() {
    //get ref to database services
              const db = getDatabase(app);
 
-             document.getElementById("Send1").addEventListener('click', function(e){
+             document.getElementById("Send").addEventListener('click', function(e){
               e.preventDefault();
               set(ref(db,  'SMS/' + new Date),
               {
